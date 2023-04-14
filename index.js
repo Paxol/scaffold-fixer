@@ -88,9 +88,9 @@ async function processEntity(entity, outputPath, oldNamespaceRegex, newNamespace
 }
 
 program
-  .requiredOption("-n, --old-namespace <namespace>", "Base namespace used by scafolder")
+  .requiredOption("-n, --old-namespace <namespace>", "Base namespace used by scaffold")
   .requiredOption("-N, --new-namespace <namespace>", "Base namespace of output")
-  .requiredOption("-i, --input <path>", "Path to scafolder output")
+  .requiredOption("-i, --input <path>", "Path to scaffold output")
   .requiredOption("-o, --output <path>", "Output path")
 
 program.parse();
