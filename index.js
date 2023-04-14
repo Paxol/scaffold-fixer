@@ -6,7 +6,7 @@ import { program } from "commander"
 
 async function main(args) {
   const [dbContext] = (await readdir(args.input, { withFileTypes: true }))
-    .filter(dirent => dirent.isFile() && dirent.name.includes("Context.cs"));
+    .filter(dirent => dirent.isFile() && dirent.name.endsWith("Context.cs"));
 
   const oldNamespaceRegex = new RegExp(`namespace ${args.oldNamespace.replaceAll('.', '\\.')}`, "g");
 
