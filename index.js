@@ -1,0 +1,1 @@
+const regex = /modelBuilder\.Entity<([a-zA-Z]+)>\(entity =>\s+{\s(.+)}/gs
