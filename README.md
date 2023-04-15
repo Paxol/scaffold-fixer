@@ -14,6 +14,10 @@ Steps:
 ```
 pnpm install
 ```
+- Build the project
+```
+pnpm build
+```
 - See the available arguments with
 ```
 pnpm start --help
