@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ServerApi.DataAccessLayer.Entities;
+using ##namespace##.Entities;
 
 namespace ##namespace##.Configurations;
 
