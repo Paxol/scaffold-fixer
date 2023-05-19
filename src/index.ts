@@ -169,7 +169,11 @@ const options = program.opts<Options>();
 
 const argsSchema = z.object({
   namespace: z.preprocess(
-    (val) => String(val).split(","),
+    (val) => {
+      const strVal = String(val);
+      const separator = strVal.includes(",") ? "," : " ";
+      return strVal.split(separator)
+    },
     z.tuple([z.string(), z.string()])
   ),
   input: z.string(),
