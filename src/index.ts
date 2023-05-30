@@ -56,7 +56,7 @@ async function processContext(
   const content = (await readFile(dbContext)).toString();
 
   const intermediate = content
-    .replace(oldNamespaceRegex, `namespace ${newNamespace}`)
+    .replaceAll(oldNamespaceRegex, `namespace ${newNamespace}`)
     .replace(
       /protected override void OnConfiguring(.+)protected override void/gs,
       "protected override void"
@@ -115,7 +115,7 @@ async function processContextMatch(
     .replaceAll(/\s{4}\./gm, "."); // indentation stuff
 
   const output = configurationTemplate
-    .replace("##namespace##", newNamespace)
+    .replaceAll("##namespace##", newNamespace)
     .replaceAll("##type##", entityType)
     .replace("##config##", processedConfiguration);
 
@@ -134,7 +134,7 @@ async function processEntity(
 
   const fileName = path.basename(entity);
   const outputContent = content
-    .replace(oldNamespaceRegex, `namespace ${newNamespace}`)
+    .replaceAll(oldNamespaceRegex, `namespace ${newNamespace}`)
     .replace("public partial class", "public class");
 
   await writeFile(path.join(outputPath, fileName), outputContent, {
